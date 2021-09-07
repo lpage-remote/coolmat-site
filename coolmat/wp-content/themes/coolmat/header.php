@@ -49,8 +49,8 @@
 			</nav><!-- #site-navigation -->
 
 			<div class="language-select">
-				
-				KOR | ENG
+				<a lang="ko-KR" href-lang="ko-KR" href="<?php echo site_url('/ko'); ?>">KR | </a>
+				<a lang="en-US" href-lang="en-US" href="<?php echo site_url(); ?>">EN </a>
 			</div>
 		</div>
 	</header><!-- #masthead -->

@@ -96,6 +96,7 @@ a {
 	line-height:  1;
 	color:  #FF0066;
 	text-align:  center;
+	margin: 0;
 }
 
 .hero-sitename{
@@ -122,6 +123,8 @@ a {
 	background-size:  cover;
 	padding-top:  310px;
 	padding-bottom:  250px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .intro-inner{
@@ -162,15 +165,39 @@ a {
 	align-items:  center;
 }
 
+.entry-number{
+	color: #FF0066;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #FFF;
+    border: solid 20px #FF0066;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	z-index:1;
+}
+
+
 .entry-title, .entry-price{
 	font-size: 16px;
 	color:  #FFF;
 	margin:  0;
 	line-height: 1;
+	position: relative;
+	z-index: 2;
 }
 
 .entry-title{
 	text-transform:  lowercase;
+}
+
+.entry-content p {
+	margin: 0;
 }
 
 /*-------------------------------*/
@@ -189,11 +216,15 @@ a {
 	pointer-events:  none;
 }
 
+.intro-description p{
+		margin: 0;
+}
+
 /*-------------------------------*/
 /*-----------FOOD GRID-----------*/
 /*-------------------------------*/
 
-.food-title{
+.section-heading{
 	font-size:  20px;
 	padding-top:  50px;
 	padding-bottom:  50px;
@@ -205,9 +236,10 @@ a {
 }
 .post{
 	position:  relative;
+	padding-top: 60px;
 }
 
-.food-grid{
+.grid{
 	display:  grid;
 	grid-template-columns: 1fr 1fr;
 	row-gap: 50px;
@@ -216,21 +248,208 @@ a {
 	max-width:  1220px;
 	margin-left:  auto;
 	margin-right: auto;
+
+	padding-left: 30px;
+	padding-right: 30px;
+}
+/*-------------------------------*/
+/*----------MAP SECTION----------*/
+/*-------------------------------*/
+.map-inner{
+	position: relative;
+	padding-bottom: 75%;
 }
 
+.map-inner iframe{
+	border:0;
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.location-info{
+	display: flex;
+	align-items: center;
+}
+
+.location-description{
+	max-width: 480px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.location-description h3{
+	margin: 0;
+	font-size: 12px;
+}
+
+.location-description p{
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+/*-------------------------------*/
+/*-----------FOOTER--------------*/
+/*-------------------------------*/
+
+.site-footer{
+	padding: 50px 30px 20px 30px;
+	border-top: solid 1px #CCC;
+	font-size: 12px;
+	font-family: Helvetica, sans-serif;
+}
+
+.site-info{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-social{
+	display: flex;
+}
+
+a.social-link{
+	display: block;
+}
+
+.social-link, .social-link img{
+	display: block;
+}
+
+.social-link{
+	margin-left: 5px;
+}
+.lowercase{
+	text-transform: lowercase;
+}
+
+.locations {
+	margin-bottom: 50px;
+}
+
+/*-------------------------------*/
+/*---------MEDIA QUERIES---------*/
+/*-------------------------------*/
+
+@media (max-width: 1100px){
+	.entry-number{
+		width: 60px;
+		height: 60px;
+		border: solid 15px #FF0066;
+	}
+	.post{
+		padding-top: 45px;
+	}
+
+	.hero {
+		padding-top: 100px;
+		padding-bottom: 160px;
+		
+	}
+
+	.hero-text{
+		font-size: 90px;
+	}
+
+	.intro{
+		padding-top: 105px;
+		padding-bottom: 125px;
+	}
+
+	.intro-title, .intro-description{
+		font-size: 4vw;
+	}
+}
+
+@media (max-width: 680px){
+
+	.site-header{
+		padding: 20px;
+	}
+
+	.logo, .language-select{
+		width: 50px;
+	}
+	.menu-item{
+		margin-left: 5px;
+		margin-right: 5px;
+		font-size: 14px;
+	}
+	.menu-item span{
+		display: none;
+	}
+
+	.hero{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.hero-text{
+		font-size: 64px;
+	}
+
+	.hero-description{
+		font-size: 16px;
+	}
+
+	.intro{
+		padding-top: 85px;;
+		padding-bottom: 105px;
+	}
+
+	.intro-title{
+		font-size:21px;
+		margin-bottom: 20px;
+	}
+
+	.intro-description{
+		font-size: 36px;
+	}
+
+	.intro-description br{
+		display:none;
+	}
+
+	.grid{
+		grid-template-columns: 1fr;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 
 
+}
 
-/* 
-1220px wide grid
-2x3 grid
-20px horizontal space
-50px space vertically
+@media (max-width: 480px){
+	.entry-number{
+		width: 30px;
+		height: 30px;
+		border-width: 4px;
+	}
 
+	.site-header{
+		padding:20px;
+		font-size: 14px;
+	}
 
+	.post{
+		padding-top: 19px;
+	}
 
-*/
+	.hero{
+		padding-top: 60px;
+		padding-bottom: 120px;
+	}
 
+	.hero-description{
+		padding-bottom: 20px;
+	}
+
+	.intro-description{
+		font-size: 30px;
+	}
+}
 
 
 
